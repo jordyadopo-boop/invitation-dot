@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Dot - Jordy &amp; Emmanuella</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1a0024, #2b003b, #1a0024);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h4 {
+            color: #d4af37;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .image-container {
+            width: 200px;
+            height: 250px;
+            margin: 20px auto;
+            border-radius: 100px 100px 0 0;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .names {
+            font-size: 28px;
+            font-weight: 300;
+            margin: 20px 0;
+        }
+        .names span {
+            display: block;
+            font-size: 10px;
+            color: #aaa;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+        .et {
+            color: #d4af37;
+            font-style: italic;
+            font-family: serif;
+            font-size: 20px;
+        }
+        .description {
+            font-size: 12px;
+            color: #ccc;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        .date-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 30px 0;
+            color: #d4af37;
+        }
+        .date-day { font-size: 40px; font-weight: bold; }
+        .date-month, .date-year { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+        .location {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* --- SECTION PROGRAMME --- */
+        .program-box {
+            background-color: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: left;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .program-title {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .prog-bold {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+        .prog-normal {
+            font-weight: normal;
+            font-size: 14px;
+            margin-top: 5px;
+            color: #eeeeee;
+        }
+        .program-note {
+            font-size: 13px;
+            color: #cccccc;
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        /* --- SECTION PAGNE --- */
+        .pagne-section {
+            background-color: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 25px 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        .pagne-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+        }
+        .pagne-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pagne-info {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        .pagne-price {
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .pagne-contact {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* --- SECTION COULEURS --- */
+        .colors-section {
+            margin: 40px 0;
+        }
+        .color-circles {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        /* --- SECTION FORMULAIRE RSVP --- */
+        .rsvp-box {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .rsvp-box h3 {
+            color: #d4af37;
+            font-family: serif;
+            font-weight: normal;
+            font-size: 24px;
+            margin-top: 0;
+            text-align: center;
+        }
+        .rsvp-box p {
+            font-size: 11px;
+            color: #aaa;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            color: #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        .form-control::placeholder {
+            color: #bbb;
+        }
+        .form-control option {
+            background-color: #2b003b;
+            color: #fff;
+        }
+        .section-title-sub {
+            color: #d4af37;
+            font-size: 13px;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 25px 0 0 0;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-sizing: border-box;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-gold {
+            background-color: #d4af37;
+            color: #1a0024;
+            border: none;
+        }
+
+        /* --- TABLEAU SYNTHÉTIQUE --- */
+        .summary-box {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px 15px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: left;
+            overflow-x: auto;
+        }
+        .summary-box h3 {
+            color: #d4af37;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            color: #fff;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h4>Mariage Traditionnel - La Dot</h4>
+
+    <div class="image-container">
+        <img src="couple.jpg" alt="Jordy et Emmanuella">
+    </div>
+
+    <div class="names">
+        Jordy
+        <span>Adopo Lionel Jordy Cédric</span>
+    </div>
+    
+    <div class="et">et</div>
+
+    <div class="names">
+        Emmanuella
+        <span>Foba Akassi Marie-Emmanuella</span>
+    </div>
+
+    <p class="description">
+        Nos deux familles s'unissent. Nous serions heureux de vous compter parmi nous ce jour-là.
+    </p>
+
+    <div class="date-section">
+        <div class="date-month">Samedi<br>Novembre</div>
+        <div class="date-day">21</div>
+        <div class="date-year">2026</div>
+    </div>
+
+    <div class="location">
+        <strong>Cour familiale de la mariée</strong><br>
+        <span style="font-size: 12px; color: #ccc;">Quartier Mockeyville, Grand-Bassam<br>
+        À côté du Terrain Drogba</span>
+    </div>
+
+    <!-- SECTION PROGRAMME -->
+    <div class="program-box">
+        <div class="program-title">💍 PROGRAMME</div>
+        
+        <div class="prog-bold">Accueil des invités et installation des familles</div>
+
+        <div class="prog-bold">Cérémonie traditionnelle</div>
+        <div class="prog-normal">Rencontre et présentation des familles</div>
+        <div class="prog-normal">Échanges, bénédictions et remise de la dot</div>
+
+        <div class="prog-bold">À partir de 12h00</div>
+        <div class="prog-bold">🍽️ Repas &amp; réjouissances</div>
+
+        <div class="prog-bold">Après le repas</div>
+        <div class="prog-normal">📸 Photos de famille et moments de partage</div>
+        <div class="prog-normal">🎶 Ambiance festive et réjouissances</div>
+
+        <div class="program-note">Le programme détaillé pourra être ajusté ultérieurement.</div>
+    </div>
+
+    <!-- SECTION PAGNE -->
+    <div class="pagne-section">
+        <h4 style="margin-top: 0;">Pagne de la Dot</h4>
+        <div class="pagne-image">
+            <img src="pagne.jpg" alt="Motif du Pagne de la Dot">
+        </div>
+        <div class="pagne-price">Le morceau est disponible à 1 500 F CFA</div>
+        <div class="pagne-info">
+            Orange Money : <span class="pagne-contact">+225 07 14 16 68 11</span><br>
+            Wave : <span class="pagne-contact">+225 07 14 16 68 11</span>
+        </div>
+    </div>
+
+    <div class="colors-section">
+        <h4>Tenue : Nos Couleurs</h4>
+        <p style="font-size: 11px; color: #ccc;">Violet, lilas ou blanc.</p>
+        <div class="color-circles">
+            <div class="circle" style="background-color: #4a0080;"></div>
+            <div class="circle" style="background-color: #990099;"></div>
+            <div class="circle" style="background-color: #d896ff;"></div>
+            <div class="circle" style="background-color: #e6e6fa;"></div>
+            <div class="circle" style="background-color: #ffffff; border: 1px solid #ccc;"></div>
+        </div>
+    </div>
+
+    <!-- SECTION FORMULAIRE DE CONFIRMATION -->
+    <div class="rsvp-box">
+        <h3>Serez-vous des nôtres ?</h3>
+        <p>Merci de remplir ce formulaire pour confirmer votre présence.</p>
+
+        <form id="rsvpForm">
+            <div class="form-group">
+                <input type="text" id="guestName" class="form-control" placeholder="Votre Nom et Prénom" required>
+            </div>
+            
+            <div class="form-group">
+                <select id="guestLink" class="form-control" required>
+                    <option value="" disabled selected>Lien avec les futurs mariés</option>
+                    <option value="Famille">Famille</option>
+                    <option value="Ami(e)">Ami(e)</option>
+                    <option value="Collègue">Collègue</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="guestPhone" class="form-control" placeholder="Votre numéro de téléphone" required>
+            </div>
+
+            <div class="form-group">
+                <select id="guestPresence" class="form-control" required onchange="toggleGuests()">
+                    <option value="" disabled selected>Confirmez-vous votre présence ?</option>
+                    <option value="Oui, je serai présent(e)">Oui, je serai présent(e)</option>
+                    <option value="Non, je ne pourrai pas venir">Non, je ne pourrai pas venir</option>
+                </select>
+            </div>
+
+            <!-- CHAMPS ACCESSOIRES / ACCOMPAGNATEURS -->
+            <div id="accompagnateursDiv" style="display: none;">
+                <div class="section-title-sub">Je viens avec :</div>
+                <div class="form-group">
+                    <input type="text" id="acc1" class="form-control" placeholder="Nom et Prénom de l'accompagnateur 1">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="acc2" class="form-control" placeholder="Nom et Prénom de l'accompagnateur 2">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="acc3" class="form-control" placeholder="Nom et Prénom de l'accompagnateur 3">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold">Confirmer ma présence</button>
+            <p style="font-size: 10px; color: #777; margin-top: 15px;">Merci de répondre avant le 8 novembre 2026</p>
+        </form>
+    </div>
+
+    <!-- TABLEAU SYNTHÉTIQUE LOCAL -->
+    <div class="summary-box">
+        <h3>Réponses enregistrées</h3>
+        <table id="summaryTable">
+            <thead>
+                <tr>
+                    <th>Invité principal</th>
+                    <th>Présence</th>
+                    <th>Accompagnateurs</th>
+                </tr>
+            </thead>
+            <tbody id="summaryBody">
+                <!-- Les lignes s'ajouteront dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- SCRIPT POUR GÉRER L'AFFICHAGE ET LE TABLEAU -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        loadTableData();
+    });
+
+    function toggleGuests() {
+        const presence = document.getElementById("guestPresence").value;
+        const div = document.getElementById("accompagnateursDiv");
+        
+        if (presence === "Oui, je serai présent(e)") {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+            document.getElementById("acc1").value = "";
+            document.getElementById("acc2").value = "";
+            document.getElementById("acc3").value = "";
+        }
+    }
+
+    document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("guestName").value;
+        const presence = document.getElementById("guestPresence").value;
+        
+        const acc1 = document.getElementById("acc1").value.trim();
+        const acc2 = document.getElementById("acc2").value.trim();
+        const acc3 = document.getElementById("acc3").value.trim();
+
+        let accList = [];
+        if (presence === "Oui, je serai présent(e)") {
+            if (acc1) accList.push(acc1);
+            if (acc2) accList.push(acc2);
+            if (acc3) accList.push(acc3);
+        }
+
+        saveToLocalStorage(name, presence, accList.join(", "));
+        loadTableData();
+        
+        // Réinitialiser le formulaire après validation
+        document.getElementById("rsvpForm").reset();
+        document.getElementById("accompagnateursDiv").style.display = "none";
+        alert("Merci ! Votre réponse a bien été enregistrée.");
+    });
+
+    function saveToLocalStorage(name, presence, accompagnateurs) {
+        let entries = JSON.parse(localStorage.getItem("rsvpEntries") || "[]");
+        entries.push({ name, presence, accompagnateurs });
+        localStorage.setItem("rsvpEntries", JSON.stringify(entries));
+    }
+
+    function loadTableData() {
+        let entries = JSON.parse(localStorage.getItem("rsvpEntries") || "[]");
+        let tbody = document.getElementById("summaryBody");
+        tbody.innerHTML = "";
+
+        if (entries.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="3" style="text-align:center; color:#aaa;">Aucune réponse pour le moment</td></tr>`;
+            return;
+        }
+
+        entries.forEach(entry => {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${entry.name}</td>
+                <td>${entry.presence}</td>
+                <td>${entry.accompagnateurs || '-'}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+</script>
+
+</body>
+</html>
